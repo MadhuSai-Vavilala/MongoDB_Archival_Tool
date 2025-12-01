@@ -1,0 +1,42 @@
+paths:
+  base_dir: "/home/ec2-user/mongodb-archival-tool"
+
+mongodb:
+  uri: "mongodb://user:pwd@localhost:27017/?authSource=admin"
+  # namespace can be either an array ["db","collection"] OR a string "db.collection"
+  namespace: ["sample_analytics", "transactions"]
+  # Keep the query as a string (JSON)mkdir -p config lib server logs
+  env: "testing-environment" # Host Name of IP or Environment name for identification
+  filter: '{ "transaction_count": { "$lt": 20 } }'
+
+archival:
+  batch_size: 2
+  pause_ms: 5000
+
+maintenance_window:
+  enabled: false
+  end: "2025-11-28T16:02:00"
+
+backup:
+  enabled: true
+ # gzip: true
+  type: "fullQuery"               # "batch" | "fullQuery"
+  dest_dir: "/data/backups"   # absolute path
+
+gui:
+  enabled: true
+  host: "127.0.0.1"
+  port: 9191
+  refresh_interval_ms: 4000
+
+log:
+  file: "logs/archive.log"
+
+
+notification:
+  telegram:
+    enabled: true
+    bot_token: "nnnnnnn93192:AAAAAAAAAAAUz26rp-U86tPTPi080HFv8B4"
+    chat_id: "-100123456789"
+#    notify_on_start: false # Default true
+#    notify_on_stop: false # Default True
