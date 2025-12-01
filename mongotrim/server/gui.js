@@ -97,7 +97,7 @@ app.get("/", async (req, res) => {
 <body>
 <header>
    <img src="tool-log.png" alt="Tool Logo" style="height:35px;" />
-   <h1>IceBox – MongoDB Data Lifecycle Cleaner (${os.hostname()})</h1>
+   <h1>MongoTrim – MongoDB Data Lifecycle Cleaner (${os.hostname()})</h1>
 </header>
 
 <section>
