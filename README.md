@@ -191,9 +191,9 @@ notification:
 ```
 git clone https://github.com/MadhuSai-Vavilala/Mongodb_Archival_Tool.git
 
-cd Mongodb_Archival_Tool
+cd Mongodb_Archival_Tool/mongotrim/
 
-unzip mongodb-archival-tool.zip
+npm install
 
 pwd
 
